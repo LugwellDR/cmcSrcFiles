@@ -1,0 +1,284 @@
+#mapHTML 
+{
+	height: 800px;
+	width: 83%;
+}
+body 
+{
+	margin-left: 12.5%;
+	margin-right: 12.5%;
+	background-color: #f3fff2;
+}
+
+/* Start NavBar Styling */
+#NavBarDivID /*NavBarID*/
+{
+	list-style-type: none;
+	width: 678px;
+	height: 26px;
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+	border: 1px solid #1d8212;
+	background-color: #ffffff;
+}
+
+#NavBarDivID>li /*NavBarID*/
+{
+	float: left;
+}
+
+#NavBarID
+{
+	list-style-type: none;
+	width: 678px;
+	height: 0px;
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+	border: 0px solid #1d8212;
+	background-color: #ffffff;
+}
+
+li a
+{
+	display: block;
+	color: #000000;
+	text-align: center;
+	padding: 4px 16px;
+	text-decoration: none;
+	background-color: #ddffd8;
+}
+li a:hover:not(.active)
+{
+	color: #ffffff;
+	background-color: #1d8212;
+}
+li a.active
+{
+	color: #000000;
+	background-color: #ffffff;
+}
+/* End NavBar Styling */
+
+/* Start TaskPage Styling */
+#floatingTaskFilterPanel
+{
+	position: absolute;
+	width: 160px;
+	top: 138px;
+	left: 3.74%;
+	z-index: 1;
+	background-color: #f3fff2;
+	padding: 0px;
+	border: 0px solid;
+	text-align: left;
+	line-height: 18px;
+	padding-left: 0px;
+}
+#tasklist_checkbox
+{
+	position: absolute;
+	left: 13.0%;
+	padding-left: 0%;
+}
+#tasklist_task
+{
+	font-style: normal;
+	position: absolute;
+	left: 14.5%;
+	padding-left: 0%;
+}
+#tasklist_datetime
+{
+	font-style: normal;
+	position: absolute;
+	left: 20.5%;
+	padding-left: 0%;
+}
+#tasklist_description
+{
+	position: absolute;
+	left: 26.0%;
+	padding-left: 0%;
+}
+#tasklist_reportedby
+{
+	font-style: normal;
+	position: absolute;
+	left: 63.5%;
+	padding-left: 0%;
+}
+#tasklist_image
+{
+	font-style: normal;
+	position: absolute;
+	left: 73.5%;
+	padding-left: 0%;
+}
+#getImageButton
+{
+	font-style: normal;
+	position: absolute;
+	left: 73.5%;
+	padding-left: 0%;
+}
+#getImageButtonPopout
+{
+	font-style: normal;
+	position: absolute;
+	left: 75.8%;
+	padding-left: 0%;
+}
+#bodyText
+{
+	margin-left: 1%;
+}
+.buttonClass
+{
+	text-align: center;
+	padding: 0px 0px;
+	cursor: pointer;
+}
+.main-list
+{
+	border: 0px solid;
+	margin-left:  81.35%;
+}
+/* End TaskPage Styling */
+
+#floatingMarkerDisplayPanel
+{
+	position: absolute;
+	width: 250px;
+	top: 112px;
+	left: 75%;
+	z-index: 1;
+	background-color: #f3fff2;
+	padding: 0px;
+	border: 0px solid;
+	text-align: left;
+	line-height: 18px;
+	padding-left: 0px;
+}
+
+/* Start MapEditor Styling */
+#floatingMarkerChoicePanel
+{
+	position: absolute;
+	width: 250px;
+	top: 293px; /* 540px */
+	left: 75%;
+	z-index: 1;
+	background-color: #f3fff2;
+	padding: 0px;
+	border: 0px solid;
+	text-align: left;
+	line-height: 18px;
+	padding-left: 0px;
+}
+
+#floatingZoneEditTogglePanel
+{
+	position: absolute;
+	width: 250px;
+	top: 445px; /* 695px */
+	left: 75%;
+	z-index: 1;
+	background-color: #f3fff2;
+	padding: 0px;
+	border: 0px solid;
+	text-align: left;
+	line-height: 18px;
+	padding-left: 0px;
+}
+
+input[type=numberGreen]
+{
+	width: 40px;
+	background-color: #40ff00;
+	color: #000000;
+}
+input[type=numberYellow]
+{
+	width: 40px;
+	background-color: #f1f442;
+	color: #000000;
+}
+input[type=numberOrange]
+{
+	width: 40px;
+	background-color: #ff951c;
+	color: #000000;
+}
+/* End MapEditor Styling */
+
+/* Start AccountManager Styling */
+#adminlist
+{
+	list-style-type: none;
+	width: 677px;
+	margin: left;
+	padding: 0;
+	overflow: hidden;
+	border: 1px solid #1d8212;
+	background-color: #ffffff;
+}
+#floatingButtons
+{
+	padding-bottom: 25px;
+	width: 100px;
+}
+.dropbtn
+{
+	background-color: #3498DB;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus
+{
+	background-color: #2980B9;
+}
+
+.dropdown
+{
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content
+{
+	display: none;
+	position: absolute;
+	background-color: #e8ffe5;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a
+{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover
+{
+	background-color: #e8ffe5;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show
+{
+	display:block;
+}
+/* End AccountManager Styling */

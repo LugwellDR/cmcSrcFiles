@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Clean My Campus Login
+		</title>
+		<link rel="stylesheet" href="cmcStylesheet.css">
+		<script src="./domainConfig.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = setupConfig();
+			firebase.initializeApp(config);
+		</script>
+		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+		<script type="text/javascript">
+			// FirebaseUI config.
+			var uiConfig =
+			{
+				signInSuccessUrl: 'home.html',
+				signInOptions:
+				[
+					// Leave the lines as is for the providers you want to offer your users.
+					firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+					firebase.auth.EmailAuthProvider.PROVIDER_ID
+				],
+				// tosUrl and privacyPolicyUrl accept either url string or a callback
+				// function.
+				// Terms of service url/callback.
+				tosUrl: 'cmcToS.html',
+				// Privacy policy url/callback.
+				privacyPolicyUrl:
+					function()
+					{
+						window.location.assign('cmcPP.html');
+					}
+			};
+			// Initialize the FirebaseUI Widget using Firebase.
+			var ui = new firebaseui.auth.AuthUI(firebase.auth());
+			// The start method will wait until the DOM is loaded.
+			ui.start('#firebaseui-auth-container', uiConfig);
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>Clean My Campus<br>(administrative website)<br>[work in progess]</h1>
+			<div id="firebaseui-auth-container"></div>
+		</center>
+	</body>
+</html>

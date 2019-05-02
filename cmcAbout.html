@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			"Clean My Campus" About
+		</title>
+		<link rel="stylesheet" href="cmcStylesheet.css">
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+		<script src="./domainConfig.js"></script>
+		<script src="./cmcNavBar.js"></script>
+		<script async src="./mapInit.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = setupConfig();
+			firebase.initializeApp(config);
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_KSd4Qek0-5SKESbw4mADr2G5zqJh0cQ&libraries=drawing,visualization"></script>
+	</head>
+	<body>
+		<div id='NavBarDivID'></div>
+		<center><h1>About</h1></center>
+		<script>
+			firebase.auth().onAuthStateChanged(
+				function(user)
+				{
+					if(user)
+					{
+						// User is signed in.
+						console.log(user.email);
+						createNavBar();
+					}
+					else
+					{
+						// No user is signed in. 
+						console.log("No User - Please Login");
+						document.getElementById("NavBarDivID").innerHTML = "<center><p>You are not signed in, please <a href='./index.html'>Login</a></p></center>";
+					}
+				});
+		</script>
+		<p>
+			The "Clean My Campus" mobile application allows students and faculty to take ownership of their campus and keeping it clean. Through the main GUI, users can report cleanliness or maintenance problems or take charge of cleaning an area themselves.
+			Through the admin portal, users can view reports, traffic data, and more.
+		</p>
+		<br>
+		<br>
+		<p>
+			This project's sponsors are Brock Brothers and Ellen Vaughan. Brock Brothers is a supervisor
+			and coordinator for NAU's Moving and Recycling Department. Ellen Vaughan is a former manager
+			for the NAU Office of Sustainability, and currently at UC Santa Cruz.
+		</p>
+		<br>
+		<br>
+		<p>
+			The "Clean My Campus" Mobile Application & Web Portal were developed by team MoGreen as a Capstone
+			project. Our team website and more information about development are <a href="https://www.cefns.nau.edu/capstone/projects/CS/2019/MoGreen-S19/index.html">here</a>.
+		</p>
+		<br>
+		<br>
+		<p>
+			Only administrative users can access other pages in the web portal. Our mobile application can be downloaded "here".
+			Questions or comments can be submitted below.
+		</p>
+		<br>
+		<br>
+		<form method="GET" action="mailto:cmg539@nau.edu" enctype="text/plain">
+			<div>Subject</div>
+			<input type="text" name="subject" />
+			<div>Message</div>
+			<textarea name="body"></textarea>
+			<br>
+			<input type="submit" value="Send" />
+		</form>
+	</body>
+</html>

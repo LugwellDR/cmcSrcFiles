@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Clean My Campus Task Page
+		</title>
+		<link rel="stylesheet" href="cmcStylesheet.css">
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-storage.js"></script>
+		<script src="./domainConfig.js"></script>
+		<script src="./cmcNavBar.js"></script>
+		<script src="./cmcTaskPageFilterPanel.js"></script>
+		<script src="./cmcTaskPageInformationPanel.js"></script>
+		<script defer src="./cmcTaskPage.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = setupConfig();
+			firebase.initializeApp(config);
+		</script>
+	</head>
+	<body>
+		<div id='NavBarDivID'></div>
+		<center><h1><div id='titleDiv'>Task Page</div></h1></center>
+		<div id='floatingTaskFilterPanel'></div>
+		<b id="tasklist_task">Tasks</b>
+		<b id="tasklist_datetime">Date/Time</b>
+		<b id="tasklist_description">Description</b>
+		<b id="tasklist_reportedby">Reported By</b>
+		<b id="tasklist_image">Image</b>
+		<br>
+		<div class="main-list" id="list_div"></div>
+		<div id="bodyText"></div>
+		<br>
+		<script>
+			firebase.auth().onAuthStateChanged(
+				function(user)
+				{
+					if(user)
+					{
+						// User is signed in.
+						console.log(user.email);
+						createNavBar();
+						createTaskPageFilterPanel();
+						createTaskPageInformationPanel();
+					}
+					else
+					{
+						// No user is signed in. 
+						console.log("No User - Please Login");
+						document.write("<center><p>You are not signed in, please <a href='./index.html'>Login</a>or see our <a href='cmcAbout.html'>About</a> page</p></center>");
+					}
+				});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Clean My Campus Heatmap
+		</title>
+		<link rel="stylesheet" href="cmcStylesheet.css">
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+		<script src="./domainConfig.js"></script>
+		<script src="./cmcNavBar.js"></script>
+		<script src="./cmcHeatmapOptionsBar.js"></script>
+		<script async src="./mapInit.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = setupConfig();
+			firebase.initializeApp(config);
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_KSd4Qek0-5SKESbw4mADr2G5zqJh0cQ&libraries=drawing,visualization&callback=initializeMap"></script>
+	</head>
+	<body>
+		<div id='NavBarDivID'></div>
+		<center><h1>Heatmap/Statistics</h1></center>
+		<div id='floatingMarkerDisplayPanel'></div>
+		<div id='mapHTML'></div>
+		<script>
+			firebase.auth().onAuthStateChanged(
+				function(user)
+				{
+					if(user)
+					{
+						// User is signed in.
+						console.log(user.email);
+						createNavBar();
+						createHeatmapOptionsPanel();
+					}
+					else
+					{
+						// No user is signed in. 
+						console.log("No User - Please Login");
+						document.write("<center><p>You are not signed in, please <a href='./index.html'>Login</a>or see our <a href='cmcAbout.html'>About</a> page</p></center>");
+					}
+				});
+		</script>
+	</body>
+</html>
